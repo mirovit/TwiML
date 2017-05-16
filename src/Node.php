@@ -97,7 +97,7 @@ abstract class Node
         if ($this->parent) {
             return (string) $this->parent;
         }
-        $doc = new DomDocument();
+        $doc = new DomDocument('1.0', 'UTF-8');
         $doc->appendChild($this->asXml($doc));
 
         return $doc->saveXml();
